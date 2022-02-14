@@ -1,5 +1,5 @@
 import React, { Box, chakra, Container, Stack, Text, useColorModeValue, VisuallyHidden } from '@chakra-ui/react';
-import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
+import { FaGithub } from 'react-icons/fa';
 import { ReactNode } from 'react';
 
 function SocialButton({
@@ -20,6 +20,7 @@ function SocialButton({
       cursor='pointer'
       as='a'
       href={href}
+      target='_blank'
       display='inline-flex'
       alignItems='center'
       justifyContent='center'
@@ -46,16 +47,10 @@ export default function Footer() {
         spacing={4}
         justify={{ base: 'center', md: 'space-between' }}
         align={{ base: 'center', md: 'center' }}>
-        <Text>© 2020 Chakra Templates. All rights reserved</Text>
+        <Text>© 2022 Newv. All rights reserved</Text>
         <Stack direction='row' spacing={6}>
-          <SocialButton label='Twitter' href='#'>
-            <FaTwitter />
-          </SocialButton>
-          <SocialButton label='YouTube' href='#'>
-            <FaYoutube />
-          </SocialButton>
-          <SocialButton label='Instagram' href='#'>
-            <FaInstagram />
+          <SocialButton label='Github' href='https://github.com/bleusoir/newv-ui'>
+            <FaGithub />
           </SocialButton>
         </Stack>
       </Container>
