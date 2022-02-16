@@ -1,9 +1,10 @@
 html,
 body {
+  height: 100%;
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 a {
@@ -13,4 +14,17 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+/* for footer */
+#__next {
+  min-height: 100%;
+  padding-bottom: 64px;
+  position: relative;
+}
+
+svg {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
 }

@@ -2,7 +2,7 @@ import '../styles/globals.css';
 import type { AppProps } from 'next/app';
 import React, { ChakraProvider } from '@chakra-ui/react';
 
-function MyApp({ Component, pageProps }: AppProps) {
+function Newv({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider>
       <Component {...pageProps} />
@@ -11,4 +11,4 @@ function MyApp({ Component, pageProps }: AppProps) {
 }
 
 // noinspection JSUnusedGlobalSymbols
-export default MyApp;
+export default Newv;

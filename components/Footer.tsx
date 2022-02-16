@@ -38,16 +38,22 @@ export default function Footer() {
   return (
     <Box
       bg={useColorModeValue('gray.50', 'gray.900')}
-      color={useColorModeValue('gray.700', 'gray.200')}>
+      color={useColorModeValue('gray.700', 'gray.200')}
+      position='absolute'
+      bottom='0'
+      width='100%'
+    >
       <Container
         as={Stack}
         maxW='6xl'
         py={4}
-        direction={{ base: 'column', md: 'row' }}
+        direction='row'
         spacing={4}
-        justify={{ base: 'center', md: 'space-between' }}
-        align={{ base: 'center', md: 'center' }}>
-        <Text>© 2022 Newv. All rights reserved</Text>
+        justify='center'
+        align='center'>
+        <Box>
+          <Text>© 2022 Newv. All rights reserved</Text>
+        </Box>
         <Stack direction='row' spacing={6}>
           <SocialButton label='Github' href='https://github.com/bleusoir/newv-ui'>
             <FaGithub />
