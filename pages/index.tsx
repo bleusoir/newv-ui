@@ -1,8 +1,6 @@
 import { Center, Container, Heading } from '@chakra-ui/react';
 import React from 'react';
 import Head from 'next/head';
-import Nav from '../components/Nav';
-import Footer from '../components/Footer';
 
 function Home() {
 
@@ -17,13 +15,11 @@ function Home() {
         <meta charSet='utf-8' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <Nav />
       <Container>
         <Center h='100px'>
           <Heading>Working on...</Heading>
         </Center>
       </Container>
-      <Footer />
     </>
   );
 }
