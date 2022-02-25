@@ -1812,7 +1812,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"core-js-pure@npm:^3.20.2":
+"core-js-pure@npm:3.21.1, core-js-pure@npm:^3.20.2":
   version: 3.21.1
   resolution: "core-js-pure@npm:3.21.1"
   checksum: 00a5dff599b7fb0b30746a638b9d0edbdc0df24ed1580ca56be595fbe3c78c375d37fc4e1bff23627109229702c9ee8ea2587a66b8280eb33b85160aa4e401e9
@@ -3103,6 +3103,7 @@ __metadata:
     "@types/react": 17.0.39
     "@typescript-eslint/eslint-plugin": ^5.11.0
     "@typescript-eslint/parser": ^5.11.0
+    core-js-pure: "npm:3.21.1"
     eslint: ^8.8.0
     eslint-config-airbnb: ^19.0.4
     eslint-config-next: 12.0.10

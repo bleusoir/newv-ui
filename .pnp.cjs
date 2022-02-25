@@ -46,6 +46,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react", "npm:17.0.39"],\
             ["@typescript-eslint/eslint-plugin", "virtual:005eddfc6176f7a60e2dc34dffe27648afe6d2ceabfd2f72aa0686e2cf9939278245100dfe240ad88dfcf4e93be8722b142d6d3d060c1f0b0d9f0791acc2e846#npm:5.12.1"],\
             ["@typescript-eslint/parser", "virtual:005eddfc6176f7a60e2dc34dffe27648afe6d2ceabfd2f72aa0686e2cf9939278245100dfe240ad88dfcf4e93be8722b142d6d3d060c1f0b0d9f0791acc2e846#npm:5.12.1"],\
+            ["core-js-pure", "npm:3.21.1"],\
             ["eslint", "npm:8.9.0"],\
             ["eslint-config-airbnb", "virtual:005eddfc6176f7a60e2dc34dffe27648afe6d2ceabfd2f72aa0686e2cf9939278245100dfe240ad88dfcf4e93be8722b142d6d3d060c1f0b0d9f0791acc2e846#npm:19.0.4"],\
             ["eslint-config-next", "virtual:005eddfc6176f7a60e2dc34dffe27648afe6d2ceabfd2f72aa0686e2cf9939278245100dfe240ad88dfcf4e93be8722b142d6d3d060c1f0b0d9f0791acc2e846#npm:12.0.10"],\
@@ -4693,6 +4694,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react", "npm:17.0.39"],\
             ["@typescript-eslint/eslint-plugin", "virtual:005eddfc6176f7a60e2dc34dffe27648afe6d2ceabfd2f72aa0686e2cf9939278245100dfe240ad88dfcf4e93be8722b142d6d3d060c1f0b0d9f0791acc2e846#npm:5.12.1"],\
             ["@typescript-eslint/parser", "virtual:005eddfc6176f7a60e2dc34dffe27648afe6d2ceabfd2f72aa0686e2cf9939278245100dfe240ad88dfcf4e93be8722b142d6d3d060c1f0b0d9f0791acc2e846#npm:5.12.1"],\
+            ["core-js-pure", "npm:3.21.1"],\
             ["eslint", "npm:8.9.0"],\
             ["eslint-config-airbnb", "virtual:005eddfc6176f7a60e2dc34dffe27648afe6d2ceabfd2f72aa0686e2cf9939278245100dfe240ad88dfcf4e93be8722b142d6d3d060c1f0b0d9f0791acc2e846#npm:19.0.4"],\
             ["eslint-config-next", "virtual:005eddfc6176f7a60e2dc34dffe27648afe6d2ceabfd2f72aa0686e2cf9939278245100dfe240ad88dfcf4e93be8722b142d6d3d060c1f0b0d9f0791acc2e846#npm:12.0.10"],\
