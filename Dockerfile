@@ -3,7 +3,7 @@ FROM node:alpine
 WORKDIR /usr/src/app
 COPY . .
 
-RUN npm i
+RUN npm i --no-fund
 RUN npm run build
 CMD [ "npm", "start" ]
 
