@@ -13,6 +13,13 @@ function Home() {
           content='Newv is service of new version detection and notifier for developer.'
         />
         <meta charSet='utf-8' />
+
+        <meta property='og:title' content='Newv' />
+        <meta property='og:url' content='https://www.newv.dev' />
+        <meta property='og:type' content='website' />
+        <meta property='og:description'
+          content='Newv is service of new version detection and notifier for developer.' />
+
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <Box>
