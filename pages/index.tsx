@@ -17,6 +17,7 @@ function Home() {
         <meta property='og:title' content='Newv' />
         <meta property='og:url' content='https://www.newv.dev' />
         <meta property='og:type' content='website' />
+        <meta property='og:image' content='og_image.png' />
         <meta property='og:description'
           content='Newv is service of new version detection and notifier for developer.' />
 
