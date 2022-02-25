@@ -1,0 +1,41 @@
+steps:
+
+  ### Build
+  - id: 'build'
+    name: 'gcr.io/cloud-builders/docker'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        docker build -t asia-northeast3-docker.pkg.dev/$PROJECT_ID/newv/ui:$TAG_NAME .
+
+  ### Publish
+  - id: 'publish'
+    name: 'gcr.io/cloud-builders/docker'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        docker push asia-northeast3-docker.pkg.dev/$PROJECT_ID/newv/ui:$TAG_NAME
+
+  ### Deploy
+  - id: 'deploy'
+    name: 'gcr.io/cloud-builders/gcloud'
+    env:
+      - 'CLOUDSDK_COMPUTE_ZONE=${_CLOUDSDK_COMPUTE_ZONE}'
+      - 'CLOUDSDK_CONTAINER_CLUSTER=${_CLOUDSDK_CONTAINER_CLUSTER}'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        CLUSTER=${_CLOUDSDK_CONTAINER_CLUSTER}
+        PROJECT=$$(gcloud config get-value core/project)
+        ZONE=${_CLOUDSDK_COMPUTE_ZONE}
+        gcloud container clusters get-credentials "$${CLUSTER}" \
+          --project "$${PROJECT}" \
+          --zone "$${ZONE}"  
+        sed -i 's|asia-northeast3-docker.pkg.dev/$PROJECT_ID/newv/ui:.*|asia-northeast3-docker.pkg.dev/$PROJECT_ID/newv/ui:$TAG_NAME|' ./k8s/*.yaml
+        
+        kubectl apply -f k8s/newv-ui-deployment.yaml
+        kubectl apply -f k8s/newv-ui-service.yaml
+        kubectl apply -f k8s/newv-ui-cert-ingress.yaml

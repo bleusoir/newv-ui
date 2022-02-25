@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: newv-ui
+  labels:
+    app: newv-ui
+spec:
+  selector:
+    matchLabels:
+      app: newv-ui
+      tier: web
+  template:
+    metadata:
+      labels:
+        app: newv-ui
+        tier: web
+    spec:
+      containers:
+        - name: newv-ui-app
+          image: asia-northeast3-docker.pkg.dev/newv-project-1/newv/ui:v1
+          ports:
+            - containerPort: 3000
