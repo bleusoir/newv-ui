@@ -40,6 +40,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@emotion/react", "virtual:005eddfc6176f7a60e2dc34dffe27648afe6d2ceabfd2f72aa0686e2cf9939278245100dfe240ad88dfcf4e93be8722b142d6d3d060c1f0b0d9f0791acc2e846#npm:11.8.1"],\
             ["@emotion/styled", "virtual:005eddfc6176f7a60e2dc34dffe27648afe6d2ceabfd2f72aa0686e2cf9939278245100dfe240ad88dfcf4e93be8722b142d6d3d060c1f0b0d9f0791acc2e846#npm:11.8.1"],\
             ["@next/eslint-plugin-next", "npm:12.1.0"],\
+            ["@next/swc-linux-x64-gnu", "npm:12.1.0"],\
+            ["@next/swc-linux-x64-musl", "npm:12.1.0"],\
             ["@types/node", "npm:17.0.17"],\
             ["@types/react", "npm:17.0.39"],\
             ["@typescript-eslint/eslint-plugin", "virtual:005eddfc6176f7a60e2dc34dffe27648afe6d2ceabfd2f72aa0686e2cf9939278245100dfe240ad88dfcf4e93be8722b142d6d3d060c1f0b0d9f0791acc2e846#npm:5.12.1"],\
@@ -4685,6 +4687,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@emotion/react", "virtual:005eddfc6176f7a60e2dc34dffe27648afe6d2ceabfd2f72aa0686e2cf9939278245100dfe240ad88dfcf4e93be8722b142d6d3d060c1f0b0d9f0791acc2e846#npm:11.8.1"],\
             ["@emotion/styled", "virtual:005eddfc6176f7a60e2dc34dffe27648afe6d2ceabfd2f72aa0686e2cf9939278245100dfe240ad88dfcf4e93be8722b142d6d3d060c1f0b0d9f0791acc2e846#npm:11.8.1"],\
             ["@next/eslint-plugin-next", "npm:12.1.0"],\
+            ["@next/swc-linux-x64-gnu", "npm:12.1.0"],\
+            ["@next/swc-linux-x64-musl", "npm:12.1.0"],\
             ["@types/node", "npm:17.0.17"],\
             ["@types/react", "npm:17.0.39"],\
             ["@typescript-eslint/eslint-plugin", "virtual:005eddfc6176f7a60e2dc34dffe27648afe6d2ceabfd2f72aa0686e2cf9939278245100dfe240ad88dfcf4e93be8722b142d6d3d060c1f0b0d9f0791acc2e846#npm:5.12.1"],\
