@@ -33,7 +33,7 @@ steps:
         ZONE=${_CLOUDSDK_COMPUTE_ZONE}
         gcloud container clusters get-credentials "${CLUSTER}" \
           --project "${PROJECT}" \
-          --zone "${ZONE}"  
+          --zone "${ZONE}"
         sed -i 's|asia-northeast3-docker.pkg.dev/$PROJECT_ID/newv/ui:.*|asia-northeast3-docker.pkg.dev/$PROJECT_ID/newv/ui:$TAG_NAME|' ./k8s/*.yaml
         
         kubectl apply -f k8s/newv-ui-deployment.yaml
