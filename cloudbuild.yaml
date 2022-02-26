@@ -37,7 +37,7 @@ steps:
     args:
       - '-c'
       - |
-        sed -i "s/image:.*/image: asia-northeast3-docker.pkg.dev\/$PROJECT_ID\/newv/ui:$SHORT_SHA/g" k8s/newv-ui-deployment.yaml
+        sed -i "s/image:.*/image: asia-northeast3-docker.pkg.dev\/$PROJECT_ID\/newv\/ui:$SHORT_SHA/g" k8s/newv-ui-deployment.yaml
 
   ### Deploy
   - id: 'Deploy'
