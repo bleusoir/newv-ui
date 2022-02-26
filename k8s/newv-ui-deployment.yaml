@@ -19,5 +19,15 @@ spec:
         - name: newv-ui-app
           image: asia-northeast3-docker.pkg.dev/newv-project-1/newv/ui:v1
           imagePullPolicy: Always
+          readinessProbe:
+            httpGet:
+              path: /api/ping
+              port: 3000
+              scheme: HTTP
+            periodSeconds: 5
+            successThreshold: 1
+            timeoutSeconds: 40
+            initialDelaySeconds: 10
           ports:
             - containerPort: 3000
+      restartPolicy: Always
