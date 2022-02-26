@@ -31,11 +31,11 @@ steps:
         docker push asia-northeast3-docker.pkg.dev/$PROJECT_ID/newv/ui:$SHORT_SHA
 
   ### Set image tag
-  - name: "gcr.io/cloud-builders/gcloud"
-    id: "Set image tag"
-    entrypoint: /bin/sh
+  - name: 'gcr.io/cloud-builders/gcloud'
+    id: 'Set image tag'
+    entrypoint: 'bash'
     args:
-      - "-c"
+      - '-c'
       - |
         sed -i "s/image:.*/image: asia-northeast3-docker.pkg.dev\/$PROJECT_ID\/newv/ui:$SHORT_SHA/g" k8s/newv-ui-deployment.yaml
 
