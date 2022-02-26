@@ -1,6 +1,6 @@
 steps:
 
-  ### Pull previous image to speed up docker build
+  ### Pull for optimization docker build time
   - name: 'gcr.io/cloud-builders/docker'
     id: 'Pull'
     entrypoint: 'bash'
@@ -12,11 +12,14 @@ steps:
   ### Build
   - id: 'Build'
     name: 'gcr.io/cloud-builders/docker'
-    entrypoint: 'bash'
-    args:
-      - '-c'
-      - |
-        docker build -t asia-northeast3-docker.pkg.dev/$PROJECT_ID/newv/ui:latest .
+    args: [
+      "build",
+      "-t",
+      "docker build -t asia-northeast3-docker.pkg.dev/$PROJECT_ID/newv/ui:$SHORT_SHA",
+      "--cache-from",
+      "docker build -t asia-northeast3-docker.pkg.dev/$PROJECT_ID/newv/ui:latest",
+      "."
+    ]
 
   ### Publish
   - id: 'Publish'
