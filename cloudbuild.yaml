@@ -1,25 +1,43 @@
 steps:
 
+  ### Pull previous image to speed up docker build
+  - name: 'gcr.io/cloud-builders/docker'
+    id: 'Pull'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        docker pull asia-northeast3-docker.pkg.dev/$PROJECT_ID/newv/ui:latest || exit 0
+
   ### Build
-  - id: 'build'
+  - id: 'Build'
     name: 'gcr.io/cloud-builders/docker'
     entrypoint: 'bash'
     args:
       - '-c'
       - |
-        docker build -t asia-northeast3-docker.pkg.dev/$PROJECT_ID/newv/ui:$TAG_NAME .
+        docker build -t asia-northeast3-docker.pkg.dev/$PROJECT_ID/newv/ui:latest .
 
   ### Publish
-  - id: 'publish'
+  - id: 'Publish'
     name: 'gcr.io/cloud-builders/docker'
     entrypoint: 'bash'
     args:
       - '-c'
       - |
-        docker push asia-northeast3-docker.pkg.dev/$PROJECT_ID/newv/ui:$TAG_NAME
+        docker push asia-northeast3-docker.pkg.dev/$PROJECT_ID/newv/ui:$SHORT_SHA
+
+  ### Set image tag
+  - name: "gcr.io/cloud-builders/gcloud"
+    id: "Set image tag"
+    entrypoint: /bin/sh
+    args:
+      - "-c"
+      - |
+        sed -i "s/image:.*/image: asia-northeast3-docker.pkg.dev\/$PROJECT_ID\/newv/ui:$SHORT_SHA/g" k8s/newv-ui-deployment.yaml
 
   ### Deploy
-  - id: 'deploy'
+  - id: 'Deploy'
     name: 'gcr.io/cloud-builders/gcloud'
     env:
       - 'CLOUDSDK_COMPUTE_ZONE=${_CLOUDSDK_COMPUTE_ZONE}'
@@ -34,8 +52,19 @@ steps:
         gcloud container clusters get-credentials "$${CLUSTER}" \
           --project "$${PROJECT}" \
           --zone "$${ZONE}"
-        sed -i 's|asia-northeast3-docker.pkg.dev/$PROJECT_ID/newv/ui:.*|asia-northeast3-docker.pkg.dev/$PROJECT_ID/newv/ui:$TAG_NAME|' ./k8s/*.yaml
         
         kubectl apply -f k8s/newv-ui-deployment.yaml
         kubectl apply -f k8s/newv-ui-service.yaml
         kubectl apply -f k8s/newv-ui-cert-ingress.yaml
+
+  ### Add the latest tag to new image
+  - name: 'gcr.io/cloud-builders/gcloud'
+    id: 'Tag'
+    args:
+      [
+        "container",
+        "images",
+        "add-tag",
+        "asia-northeast3-docker.pkg.dev/$PROJECT_ID/newv/ui:$SHORT_SHA",
+        "asia-northeast3-docker.pkg.dev/$PROJECT_ID/newv/ui:latest",
+      ]
