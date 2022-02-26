@@ -15,7 +15,7 @@ steps:
     args: [
       "build",
       "-t",
-      "docker build -t asia-northeast3-docker.pkg.dev/$PROJECT_ID/newv/ui:$SHORT_SHA",
+      "asia-northeast3-docker.pkg.dev/$PROJECT_ID/newv/ui:$SHORT_SHA",
       "--cache-from",
       "asia-northeast3-docker.pkg.dev/$PROJECT_ID/newv/ui:latest",
       "."
