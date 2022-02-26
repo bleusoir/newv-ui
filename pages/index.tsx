@@ -23,7 +23,7 @@ function Home() {
       </Head>
       <Box>
         <Center mt='50px'>
-          <Heading size='xl'>What is Newv?</Heading>
+          <Heading size='2xl'>What is Newv?</Heading>
         </Center>
         <Center mt='14px'>
           <Heading size='md' pl='30px' pr='30px'>
