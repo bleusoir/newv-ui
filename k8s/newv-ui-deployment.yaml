@@ -15,7 +15,6 @@ spec:
         app: newv-ui
         tier: web
     spec:
-      terminationGracePeriodSeconds: 31
       containers:
         - name: newv-ui-app
           image: asia-northeast3-docker.pkg.dev/newv-project-1/newv/ui:v1
