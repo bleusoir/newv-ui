@@ -5,6 +5,6 @@ COPY . .
 
 RUN yarn install
 RUN yarn next build
-CMD [ "npm", "start" ]
+CMD [ "yarn", "start" ]
 
 EXPOSE 3000
