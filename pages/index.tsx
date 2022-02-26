@@ -9,7 +9,6 @@ function Home() {
         <title>Newv.dev</title>
         <meta name='description' content='Newv is service of new version detection and notifier for developer.' />
         <meta charSet='utf-8' />
-
         <meta property='og:title' content='Newv' />
         <meta property='og:url' content='https://www.newv.dev' />
         <meta property='og:type' content='website' />
@@ -20,7 +19,6 @@ function Home() {
           property='og:description'
           content='Newv is service of new version detection and notifier for developer.'
         />
-
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <Box>
@@ -28,7 +26,7 @@ function Home() {
           <Heading size='xl'>What is Newv?</Heading>
         </Center>
         <Center mt='14px'>
-          <Heading size='md' pl='10px' pr='10px'>
+          <Heading size='md' pl='30px' pr='30px'>
             Newv is service of new version detection and notifier for developer.
           </Heading>
         </Center>

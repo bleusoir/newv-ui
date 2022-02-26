@@ -1,10 +1,25 @@
-import { extendTheme, ThemeConfig } from '@chakra-ui/react';
+import { extendTheme, theme } from '@chakra-ui/react';
 
-const config: ThemeConfig = {
+export default extendTheme({
+  components: {
+    Heading: {
+      baseStyle: {
+        fontWeight: '400',
+      },
+    },
+  },
   initialColorMode: 'dark',
   useSystemColorMode: false,
-};
-
-const theme = extendTheme({ config });
-
-export default theme;
+  styles: {
+    global: {
+      'html, body': {
+        fontWeight: '400',
+      },
+    },
+  },
+  fonts: {
+    heading: `Montserrat, ${theme.fonts?.heading}`,
+    body: `Work Sans, ${theme.fonts?.body}`,
+    mono: `Montserrat, ${theme.fonts?.mono}`,
+  },
+});

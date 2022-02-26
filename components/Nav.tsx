@@ -16,7 +16,7 @@ import {
 import { CloseIcon, HamburgerIcon, MoonIcon, SunIcon } from '@chakra-ui/icons';
 import React, { ReactNode } from 'react';
 
-const Links = ['Home', 'API'];
+const Links = ['HOME', 'API'];
 
 function NavLink({ children }: { children: ReactNode }) {
 
