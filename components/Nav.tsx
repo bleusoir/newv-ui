@@ -21,7 +21,7 @@ const Links = ['HOME', 'API'];
 function NavLink({ children }: { children: ReactNode }) {
 
   return (<Link
-    href={children === 'Home' ? '/' : 'rest'}
+    href={children === 'HOME' ? '/' : 'rest'}
     px={2}
     py={1}
     rounded='md'
