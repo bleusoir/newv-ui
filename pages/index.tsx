@@ -13,7 +13,9 @@ function Home() {
         <meta property='og:title' content='Newv' />
         <meta property='og:url' content='https://www.newv.dev' />
         <meta property='og:type' content='website' />
-        <meta property='og:image' content='https://storage.googleapis.com/pub_bucket_1/og_image.png' />
+        <meta property='og:image' content='https://storage.googleapis.com/pub_bucket_1/og.png' />
+        <meta property='og:image:width' content='250' />
+        <meta property='og:image:height' content='250' />
         <meta
           property='og:description'
           content='Newv is service of new version detection and notifier for developer.'
