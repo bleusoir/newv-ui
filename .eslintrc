@@ -20,6 +20,8 @@
     "for-direction": "error",
     "react/no-deprecated": "off",
     "react/jsx-props-no-spreading": "off",
+    "comma-dangle": "off",
+    "@typescript-eslint/comma-dangle": "off",
     "import/extensions": [
       "error",
       "ignorePackages",

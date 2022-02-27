@@ -42,6 +42,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@next/eslint-plugin-next", "npm:12.1.0"],\
             ["@next/swc-linux-x64-gnu", "npm:12.1.0"],\
             ["@next/swc-linux-x64-musl", "npm:12.1.0"],\
+            ["@types/gtag.js", "npm:0.0.8"],\
             ["@types/node", "npm:17.0.17"],\
             ["@types/react", "npm:17.0.39"],\
             ["@typescript-eslint/eslint-plugin", "virtual:005eddfc6176f7a60e2dc34dffe27648afe6d2ceabfd2f72aa0686e2cf9939278245100dfe240ad88dfcf4e93be8722b142d6d3d060c1f0b0d9f0791acc2e846#npm:5.12.1"],\
@@ -2384,6 +2385,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["@types/gtag.js", [\
+        ["npm:0.0.8", {\
+          "packageLocation": "./.yarn/cache/@types-gtag.js-npm-0.0.8-2cc584f787-fecb1d772a.zip/node_modules/@types/gtag.js/",\
+          "packageDependencies": [\
+            ["@types/gtag.js", "npm:0.0.8"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["@types/json-schema", [\
         ["npm:7.0.9", {\
           "packageLocation": "./.yarn/cache/@types-json-schema-npm-7.0.9-361918cff3-259d0e25f1.zip/node_modules/@types/json-schema/",\
@@ -4690,6 +4700,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@next/eslint-plugin-next", "npm:12.1.0"],\
             ["@next/swc-linux-x64-gnu", "npm:12.1.0"],\
             ["@next/swc-linux-x64-musl", "npm:12.1.0"],\
+            ["@types/gtag.js", "npm:0.0.8"],\
             ["@types/node", "npm:17.0.17"],\
             ["@types/react", "npm:17.0.39"],\
             ["@typescript-eslint/eslint-plugin", "virtual:005eddfc6176f7a60e2dc34dffe27648afe6d2ceabfd2f72aa0686e2cf9939278245100dfe240ad88dfcf4e93be8722b142d6d3d060c1f0b0d9f0791acc2e846#npm:5.12.1"],\
