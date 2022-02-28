@@ -1,6 +1,10 @@
 import { extendTheme, theme } from '@chakra-ui/react';
 
 export default extendTheme({
+  config: {
+    initialColorMode: 'dark',
+    useSystemColorMode: false,
+  },
   components: {
     Heading: {
       baseStyle: {
@@ -8,8 +12,6 @@ export default extendTheme({
       },
     },
   },
-  initialColorMode: 'dark',
-  useSystemColorMode: false,
   styles: {
     global: {
       'html, body': {
