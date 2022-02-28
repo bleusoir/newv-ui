@@ -58,9 +58,12 @@ steps:
         
         kubectl apply -f k8s/newv-ui-deployment.yaml
 
-  ### Set deployment image
+  ### Trigger deployment update
   - name: 'gcr.io/cloud-builders/kubectl'
     id: 'Set deployment image'
+    env:
+      - 'CLOUDSDK_COMPUTE_ZONE=${_CLOUDSDK_COMPUTE_ZONE}'
+      - 'CLOUDSDK_CONTAINER_CLUSTER=${_CLOUDSDK_CONTAINER_CLUSTER}'
     args: [
       'set',
       'image',
