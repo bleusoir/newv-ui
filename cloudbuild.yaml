@@ -13,12 +13,12 @@ steps:
   - id: 'Build'
     name: 'gcr.io/cloud-builders/docker'
     args: [
-      "build",
-      "-t",
-      "asia-northeast3-docker.pkg.dev/$PROJECT_ID/newv/ui:$SHORT_SHA",
-      "--cache-from",
-      "asia-northeast3-docker.pkg.dev/$PROJECT_ID/newv/ui:latest",
-      "."
+      'build',
+      '-t',
+      'asia-northeast3-docker.pkg.dev/$PROJECT_ID/newv/ui:$SHORT_SHA',
+      '--cache-from',
+      'asia-northeast3-docker.pkg.dev/$PROJECT_ID/newv/ui:latest',
+      '.'
     ]
 
   ### Publish
@@ -57,17 +57,26 @@ steps:
           --zone "$${ZONE}"
         
         kubectl apply -f k8s/newv-ui-deployment.yaml
-        kubectl apply -f k8s/newv-ui-service.yaml
-        kubectl apply -f k8s/newv-ui-cert-ingress.yaml
+
+  ### Set deployment image
+  - name: 'gcr.io/cloud-builders/kubectl'
+    id: 'Set deployment image'
+    args: [
+      'set',
+      'image',
+      'deployment',
+      'newv-ui',
+      'newv-ui-app=asia-northeast3-docker.pkg.dev/$PROJECT_ID/newv/ui:$SHORT_SHA'
+    ]
 
   ### Add the latest tag to new image
   - name: 'gcr.io/cloud-builders/gcloud'
     id: 'Tag'
     args:
       [
-        "container",
-        "images",
-        "add-tag",
-        "asia-northeast3-docker.pkg.dev/$PROJECT_ID/newv/ui:$SHORT_SHA",
-        "asia-northeast3-docker.pkg.dev/$PROJECT_ID/newv/ui:latest",
+        'container',
+        'images',
+        'add-tag',
+        'asia-northeast3-docker.pkg.dev/$PROJECT_ID/newv/ui:$SHORT_SHA',
+        'asia-northeast3-docker.pkg.dev/$PROJECT_ID/newv/ui:latest',
       ]
